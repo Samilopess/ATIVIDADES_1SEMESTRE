@@ -1,29 +1,24 @@
-class Veiculo:
-    def __init__(self, marca, modelo):
+class Carro:
+    def __init__(self, marca, modelo, ano, cor):
         self.marca = marca
         self.modelo = modelo
-
-    def freiar(self):
-        return self.freiar
-    def acelerar(self):
-        return self.acelerar
-    
-class Carro(Veiculo):
-    def __init__(self, marca, modelo, cor):
-        super().__init__(marca, modelo)
+        self.ano = ano
         self.cor = cor
-    def abrir_porta(self):
-        return self.abrir_porta
+
+    def ligar(self):
+        return f"{self.modelo} está ligando"
     
-class Moto(Veiculo):
-    def __init__(self, marca, modelo, cilindrada):
-        super().__init__(marca, modelo)
-        self.cilindrada = cilindrada
-    def empinar(self):
-        return self.empinar
+    def desligar(self):
+        return f"{self.modelo} está desligando"
+    
+    def acelerar(self):
+        return f"{self.modelo} está acelerando"
     
 if __name__ == '__main__':
-    carro1 = Carro("bmw", "x6", "branca")
-    moto1 = Moto("Yamara", "XJ6", "600")
-    print(F'Marca: {carro1.marca}\n Modelo: {carro1.modelo}\n Cor: {carro1.cor}')
-    print(F'Marca: {moto1.marca}\n Modelo: {moto1.modelo}\n Cilindrda: {moto1.cilindrada}')
+    carro1 = Carro("BMW", "X1", 2018, "Branca")
+    carro2 = Carro("Fiat", "Toro", 2021, "Prata")
+    carro3 = Carro("Audi", "A3", 2015, "All black")
+
+    print(carro1.ligar())
+    print(carro2.desligar())
+    print(carro3.acelerar())
